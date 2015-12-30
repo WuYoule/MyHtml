@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .container {
+           border: 1px solid #000099;
+            width: 900px;
+            height: 600px;
+            display: flex;
+            flex-direction: row;/*row | row-reverse | column | column-reverse*/
+            flex-wrap:nowrap; /*nowrap | wrap | wrap-reverse;*/
+            justify-content: flex-end;/*水平方向 flex-start | flex-end | center | space-between | space-around;*/
+            /*align-items: center;/!*垂直方向(单轴线起作用) auto | flex-start | flex-end | center | baseline | stretch(不设高度);*!/*/
+            align-content:center; /*垂直方向，多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。flex-start | flex-end | center | space-between | space-around | stretch（不设高度）;*/
+            margin: 0 auto;
+            color: white;
+        }
+        .div1,.div2,.div3,.div4,.div5,.div6,.div7{
+            /*width: 100%;*/
+            height: 100px;
+            margin: 0;
+        }
+        .div1{
+            width: 50px;
+            background-color: #00b500;
+            order:0;/*order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。*/
+            flex-grow: 0; /* flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。 */
+
+        }
+        .div2{
+            width: 100px;
+            background-color: salmon;
+
+        }
+        .div3{
+            width: 400px;
+            background-color: black;
+
+        }
+        .div4{
+            width: 100px;
+            background-color:#FFC40D;
+            flex-basis: 500px;
+            /*flex-grow: 1;*/
+            /*flex-shrink: 1;/!*如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。*!/*/
+        }
+        .div5{
+            width: 100px;
+            background-color: #000000;
+             /*align-self: flex-end;*/
+            /*flex-grow: 1;/!*如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。*!/*/
+            /*flex-shrink: 1;*/
+            /*order: 4;*/
+        }
+        .div6{
+            width: 100px;
+            background-color: #1E7145;
+            /*flex-grow: 1;*/
+            /*flex-shrink: 0;*/
+        }
+        .div7{
+            /*flex-shrink: 1;*/
+            /*flex-grow: 1;*/
+            width: 100px;
+            background-color: #ffff00;
+        }
+
+        .div1_child1{
+            width: 50px;
+            height: 20px;
+            background-color: #00ee00;
+        }
+        .div1_child2{
+            width: 50px;
+            height: 20px;
+            background-color: #000099;
+        }
+        .div1_child3{
+            width: 50px;
+            height: 20px;
+            background-color: #fa96b5;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<!--<div class="div1">-->
+    <!--<div class="div1_child1">child</div>-->
+    <!--<div class="div1_child2">child</div>-->
+    <!--<div class="div1_child3">child</div>-->
+<!--</div>-->
+    <!--<div class="div2">two</div>-->
+    <!--<div class="div3">three</div>-->
+    <div class="div4">four</div>
+    <div class="div5">five</div>
+    <div class="div6">six</div>
+    <div class="div7">seven</div>
+</div>
+</body>
+</html>

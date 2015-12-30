@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+          /*height: 90px;*/
+            border: 1px green solid;
+
+        }
+        .child {
+            background-color: #FFEAA8;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="child">地址：http://www.w3cfuns.com/blog-5479241-5410500.html
+
+        问题：两个盒子是父子级关系时，子元素的margin-top会传递给父级。
+        换句话说，给了子元素一个margin-top完全没效果，这个样式反而污染了父元素（坑啊！）
+
+        解决办法：给父级元素设置padding（变相完成子元素的margin效果）
+        PS：给父元素加padding后，不要忘了相应的减少weight和height，否则父元素会被撑大。
+        {没有实现}
+    </div>
+</div>
+</body>
+</html>

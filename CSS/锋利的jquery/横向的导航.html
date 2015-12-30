@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .wrap{
+            margin: 0 auto;
+
+            text-align: center;
+            padding-top: 50px;
+        }
+        .nav-parent{
+            background: #5ECFBA;
+        }
+        .nav-parent>li{
+            display: inline-block;
+
+            position: relative;
+            height: 40px;
+            width: 80px;
+            background: #5ECFBA;
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 40px;
+        }
+        .nav-parent li:hover{
+            background: #4FC2AD;
+
+        }
+        .nav-child{
+
+            position: absolute;
+
+            list-style: none;
+            top: 40px;
+            left: 0;
+            display: none;
+
+        }
+        .nav-child li{
+           background: #124f94;
+            width: 80px;
+
+        }
+
+        .nav-child li:hover{
+            background: #95B8E7;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="nav-parent">
+            <li>首页</li>
+            <li>新闻
+                <ul class="nav-child">
+                    <li>新闻1</li>
+                    <li>新闻2</li>
+                    <li>新闻3</li>
+                </ul>
+            </li>
+            <li>公告</li>
+            <li>关于</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    $(function(){
+        $(".nav-parent li").hover(function(){
+            $(this).find(".nav-child").slideDown(300);
+        },function(){
+            $(this).find(".nav-child").slideUp(300);
+        });
+    })
+</script>

@@ -1,0 +1,31 @@
+注: 在版本jQuery 1.4中，$.support 替换掉了$.browser 变量
+$(document).ready(function() {
+// Target Firefox 2 and above
+if ($.browser.mozilla && $.browser.version >= "1.8" ){
+    // do something
+}
+// Target Safari
+if( $.browser.safari ){
+    // do something
+}
+// Target Chrome
+if( $.browser.chrome){
+    // do something
+}
+// Target Camino
+if( $.browser.camino){
+    // do something
+}
+// Target Opera
+if( $.browser.opera){
+    // do something
+}
+// Target IE6 and below
+if ($.browser.msie && $.browser.version <= 6 ){
+    // do something
+}
+// Target anything above IE6
+if ($.browser.msie && $.browser.version > 6){
+    // do something
+}
+});

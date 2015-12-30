@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .imgContainer{
+            max-width: 1000px;
+            margin: auto;
+        }
+        .imgContainer h2{
+            font-size: 2vw;
+        }
+        .imgContainer img{
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="imgContainer">
+    <h2>picture source media</h2>
+    <picture>
+        <source media="(max-width:480px)" srcset="images/480x320.gif">
+        <source media="(max-width:640px)" srcset="images/640x427.gif">
+        <source media="(max-width:720px)" srcset="images/720x480.gif">
+        <source media="(max-width:900px)" srcset="images/900x600.gif">
+        <img src="images/900x600.gif" alt="" />
+    </picture>
+    <h2>srcset设置响应式图片</h2>
+    <img sizes="(min-width:900px) 900px, 100vw"
+         srcset="images/480x320.gif 480w,
+				         images/640x427.gif 640w,
+				         images/720x480.gif 720w,
+				         images/900x600.gif 900w"
+         src="images/480x320.gif" alt="responsive images" />
+</div>
+</body>
+</html>

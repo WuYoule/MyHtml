@@ -1,0 +1,101 @@
+.px  逻辑像素 浏览器使用的抽象单位
+.dp dt 设备无关像素
+.dpr 设备像素缩放比
+计算公式 1px=(dpr)^2*dp
+
+平面上：1px=(2)^2dp
+纬度上：1px=2*dp
+iphone5的drp为2 => 640dp,1136dp=320px,568px
+
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+width:设置布局viewport的特定值
+initial-scale:设置页面的初始缩放
+minimum-scale:最少缩放
+maximum-scale:最大缩放
+user-scalable:用户能否缩放
+
+
+不定宽高水平垂直居中
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+
+flexbox版
+justify-content:center;(水平)
+align-items:center;(垂直)
+display:flex;
+
+android4.4以下 flexbox
+android4.4及以上 flex
+ios可以使用最新的flex
+
+flex（新版）:
+display:flex;
+flex:1;
+justify-content:center;
+align-items:center;
+
+flexbox(旧版):
+display:flex-box;
+flex-box:1;
+box-pack:center;
+box-align:center;
+
+一像素边框
+li:before
+{
+border-top:1px solid #ccc;
+transform:scaleY(0.5);
+}
+
+
+em:是根据父节点font-size为相对单位
+rem:是根据html的font-size为相对单位
+
+//单文本溢出
+overflow:hidden;
+white-space:nowrap;
+text-overflow:ellipsis;
+
+//多文本溢出
+display:box;
+overflow:hidden;
+text-overflow:ellipsis;
+word-break:break-all;
+box-orient:vertical;
+line-clamp:2;
+
+
+300毫秒的延迟
+移动web页面上的click时间响应都要慢上300ms
+300ms延迟怎么破？用tap时间代替click事件
+
+tap "点透"的bug
+tap透传
+
+
+弹性滚动
+局部滚动开启弹性滚动
+ body{
+  overflow:scroll;
+  overflow-scrolling:touch;
+ }
+ android不支持原生的弹性滚动
+ 但可以借助第三方库iScroll实现
+
+
+上拉加载
+使用scroll事件
+
+
+
+
+常用的屏幕尺寸从小到大如下所示：
+  老智能手机：320px-480px
+  智能手机：>=480px
+  平板电脑：>=768px
+  中等屏幕（桌面显示器）：>=992px
+  大屏幕（大桌面显示器）：>=1200px
+
+

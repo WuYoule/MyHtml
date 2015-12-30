@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="js&css/index.css"/>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        var Scale = 0.6666;
+        $(function () {
+            WHeight = $(window).height();
+            WWidth = $(window).width();
+//            alert("h:"+WHeight+"---w:"+WWidth+""+"---w/h:"+WWidth/WHeight);
+            if (WWidth / WHeight > Scale) {
+                $(".page").width(WHeight * Scale).css("margin-left", (WWidth - WHeight * Scale) / 2 + "px");
+            }
+        })
+    </script>
+</head>
+<body>
+<div id="header">
+    <!-- 登陆地点-->
+    <div id="left">上海市</div>
+    <!-- 登陆 注册 空间-->
+    <div id="right">
+        <div id="right_login_reg">
+            <span>注册</span>
+            <span>|</span>
+            <span>登陆</span>
+        </div>
+        <div id="right_info">
+            <span>欢迎你 Youle</span>
+            <span>我的空间</span>
+        </div>
+    </div>
+
+</div>
+<div id="uparrow"></div>
+<div id="pbody">
+    <!-- 首页-->
+    <div class="page" id="pageIndex">
+        <!-- 飞船图-->
+        <div id="feichuan"></div>
+        <!-- logo-->
+        <div id="logo"></div>
+        <!-- 图片轮播-->
+        <div id="lunbo">
+
+            <div style="width:97%; height:93.3%; padding-left:1.5%; padding-right:1.5%">
+                <div style="width:100%; height:3.4%"></div>
+                <div id="lunboimg"></div>
+            </div>
+        </div>
+        <!-- 图片轮播按钮-->
+        <div id="lunbobtn">
+            <img  src="images/ty/mobile_index_lunbobg_current.png" />
+
+        </div>
+        <!-- 查看更多-->
+        <div id="more"></div>
+        <!-- 立即抢票-->
+        <div id="grabvotes"></div>
+        <!-- 空白站位-->
+        <div id="nothing"></div>
+    </div>
+
+    <!-- 故事背景-->
+    <div class="page" id="background">
+        <!-- 空白-->
+        <div style="width:100%; height:40px;"></div>
+        <!-- 背景标题-->
+        <div id="background_biaoti"></div>
+        <!-- 背景内容-->
+        <div id="background_content">
+            在地球的另外一个平行时空，有一个叫做Molly的星球。在很久之前，Molly星球一直处于魔法统治时代。这里曾经生产落后，灾难频频，拥有法力的蒂塔族群，给星球带来发展和希望。然而随着蒂塔族的野心家萨萨女巫的诞生，安宁被打破，自从萨萨女巫统治了星球，从此人们的生活陷入黑暗……
+        </div>
+        <!-- 背景更多-->
+        <div id="background_more"></div>
+    </div>
+
+    <!-- 角色资料-->
+    <div class="page" id="character">
+        <!-- 空白-->
+        <div style="width:100%; height:40px;"></div>
+        <!-- 角色标题-->
+        <div id="character_biaoti"></div>
+        <!-- 空白-->
+        <div style="width: 100%; height: 20px;"></div>
+        <!-- 角色内容-->
+        <div id="character_content">
+            <img src="images/mobile_jsxx_pic1.png" alt=""/>
+            <img src="images/mobile_jsxx_pic2.png" alt=""/>
+            <img src="images/mobile_jsxx_pic3.png" alt=""/>
+        </div>
+        <!-- 角色更多-->
+        <div id="character_more"></div>
+
+    </div>
+
+
+</div>
+</body>
+</html>

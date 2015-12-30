@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="modernizr-1.7.js"></script>
+    <style>
+        div{
+            width: 500px;
+            height: 200px;
+            background: #95B8E7;
+            border-radius: 20px;
+            text-align: center;
+            line-height: 200px;
+
+        }
+        .no-borderradius div{
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+      <section>
+          这是测试页面
+      </section>
+</body>
+</html>
+<script>
+    $(function(){
+    if(Modernizr.sections){
+        alert('支持');
+    }
+    else
+    {
+        alert('不支持');
+    }});
+</script>

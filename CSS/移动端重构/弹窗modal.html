@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .header, .wrap-page {
+            position: absolute;
+            left: 0;
+            right: 0;
+
+        }
+
+        .header {
+            color: #fff;
+            line-height: 44px;
+            text-align: center;
+            height: 44px;
+            top: 0;
+            background: #006CCF;
+        }
+
+        .wrap-page {
+            top: 44px;
+        }
+
+        .overlay{
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color:rgba(0,0,0,0);
+            z-index: -999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition:all 0.3s ease-in-out;
+
+
+        }
+        .modal{
+            opacity: 0;
+            background: #fff;
+            border-radius: 5px;
+            /*margin: 0 10px;*/
+            overflow: hidden;
+            transform: scale(0.8);
+            transition: all 0.3s ease-in-out;
+        }
+        .modal .modal-hd{
+            text-align: center;
+            line-height: 40px;
+            background: #007aff;
+            color: #fff;
+        }
+        .modal .modal-bd{
+            padding: 15px;
+            line-height: 1.5;
+            color: #333;
+        }
+        .modal .modal-ft{
+            display: flex;
+           border-top: 1px solid #cccccc;
+        }
+        .modal .modal-ft .btn-modal{
+            flex: 1;
+            background: #fefefe;
+            text-align: center;
+            line-height: 40px;
+            color: #0078e7;
+            cursor: pointer;
+        }
+        .modal .modal-ft .btn-modal:hover{
+            background: #cccccc;
+            opacity: 0.7;
+        }
+        .modal .modal-ft .btn-modal:first-child{
+            border-right: 1px solid #cccccc;
+        }
+    </style>
+</head>
+<body>
+<header class="header">标题</header>
+<div class="wrap-page">
+    <section class="page">
+        <button id="modal-link">测试</button>
+        说实话真想不出什么理由，非得搞成兄弟元素。后来突然意识到以前的遮罩层如果不采用半透明图片的话，就得使用opacity（ie6-8不支持，通过滤镜模拟），而这个属性会对整个子元素都起作用，而且还没办法通过子元素覆写这个值。这是我能想到的一条最佳理由，如果还有其他理由欢迎交流。
+    </section>
+
+</div>
+
+<div class="overlay">
+    <section class="modal">
+        <div class="modal-hd">标题</div>
+        <div class="modal-bd">
+
+            <p>1青，取之于蓝，而青于蓝；冰，水为之，而寒于水。故木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</p>
+
+            <p>2青，取之于蓝，而青于蓝；冰，水为之，而寒于水。故木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</p>
+
+            <p>3青，取之于蓝，而青于蓝；冰，水为之，而寒于水。故木受绳则直，金就砺则利，君子博学而日参省乎己，则知明而行无过矣。</p>
+        </div>
+        <div class="modal-ft">
+            <span class="btn-modal">确认</span><span class="btn-modal">取消</span>
+        </div>
+    </section>
+</div>
+</body>
+</html>
+<script>
+$(function(){
+    var time;
+  $('#modal-link').click(function(){
+//    clearInterval(time);
+     $('.overlay').css({
+         'background-color':'rgba(0,0,0,0.8)',
+         'z-index':'999',
+         'transition-delay': '0s'
+     });
+      $('.modal').css({opacity:1});
+
+  });
+    $('.btn-modal').click(function(){
+        $('.modal').css({opacity:0});
+        $('.overlay').css({
+                'background-color':'rgba(0,0,0,0)',
+                'z-index':'-999',
+                 'transition-delay': '0.3s'
+            });
+//        time=setInterval(function(){
+//            $('.overlay').css({
+//                'background-color':'rgba(0,0,0,0)',
+//                'z-index':'-999'
+//            });
+//        },300);
+
+    });
+})
+</script>

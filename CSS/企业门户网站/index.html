@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<script type="text/javascript">
+    function showobj(id){
+        var obj=document.getElementById(id);
+        obj.style.display="block";
+    }
+    function hideobj(id){
+        var obj=document.getElementById(id);
+        obj.style.display="none";
+    }
+    var arr=new  Array;
+    arr[0]="img/banner1.jpg";
+    arr[1]="img/banner2.jpg";
+    arr[2]="img/banner3.jpg";
+    arr[3]="img/banner4.jpg";
+    var count=0;
+    function changeImg(){
+        var obj=document.getElementById('img');
+        if(arr.length==count){
+            count=0;
+        }
+        obj.src=arr[count];
+
+
+        count++;
+    }
+    var timer=setInterval(changeImg,2000);
+
+    function clearTimer(){
+        clearInterval(timer);
+    }
+    function showbannerbyid(num){
+        clearTimer();
+        var index=parseInt(num-1);
+        document.getElementById('img').src=arr[index];
+        count=index;
+
+    }
+    function btnMouseOut(){
+        timer=setInterval(changeImg,2000);
+    }
+</script>
+<body>
+<div id="mainbox">
+    <!-- 上面容器-->
+    <div id="topbox" >
+    <!-- logo-->
+        <div class="logo">
+            <div class="logo_img">
+                <img src="img/新智达logo1副本.png" alt=""/>
+                <span>成都新智达智能家居有限公司</span>
+            </div>
+            <div class="logo_link">
+
+                <span>设为首页 | 联系我们</span>
+                <img src="img/top.jpg" alt=""/>
+            </div>
+        </div>
+        <!-- menu-->
+        <div class="menu">
+            <ul>
+                <li><a href="">首页</a></li><li><a href="">关于我们</a></li><li onmouseover="showobj('childmenu')" onmouseout="hideobj('childmenu')"><a href="">新闻资讯</a></li><li><a href="">产品介绍</a></li><li><a href="">解决方案</a></li><li><a href="">体验中心</a></li><li><a href="">成功案例</a></li><li><a href="">加盟合作</a></li><li><a href="">资料下载</a></li><li><a href="">联系我们</a></li>
+            </ul>
+        </div>
+        <div  id="childmenu" style="display:none;position: relative;z-index: 9999">
+            <!--<div onmouseover="showobj('childmenu')" onmouseout="hideobj('childmenu')" style="background: red;height: 5px;width:8.15%;position: absolute;"></div>-->
+            <ul onmouseover="showobj('childmenu')" onmouseout="hideobj('childmenu')"><li><a href="">公司新闻</a></li><li><a href="">行业新闻</a></li><li><a href="">国内新闻</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner"><div class="banner_img"><img id="img" src="img/banner1.jpg" alt=""/></div>
+        <div class="banner_count">
+            <span onmouseover="showbannerbyid(1)" onmouseout="btnMouseOut()">1</span>
+            <span onmouseover="showbannerbyid(2)" onmouseout="btnMouseOut()">2</span>
+            <span onmouseover="showbannerbyid(3)" onmouseout="btnMouseOut()">3</span>
+            <span onmouseover="showbannerbyid(4)" onmouseout="btnMouseOut()">4</span>
+        </div>
+
+    </div><!--中间容器-->
+    <div id="middlebox">
+        <!-- 中间上面部分-->
+        <div id="midtop">
+            <div class="news">
+                <div class="news_logo">
+                    <!--<img src="img/news.png" alt=""/>-->
+                </div>
+                <div class="news_img">
+                    <img src="img/newsimg.png" alt=""/>
+                </div>
+                <div class="news_content">
+                    <ul><li>西昌市为主的生活与居住区</li><li>西昌市为主的生活与居住区</li><li>西昌市为主的生活与居住区</li><li>西昌市为主的生活与居住区</li>
+                    </ul></div>
+            </div><div class="company">
+                    <div class="company_logo">
+                        <img src="img/company.png" alt=""/>
+                    </div>
+                    <div class="company_img">
+                        <img src="img/companyimg.png" alt=""/>
+                    </div>
+                    <div class="company_content">
+                        <span>我们的网页因为 CSS 而呈现千变万化的风格。这一看似简单的样式语言在使用中非常灵活，只要你发挥创意就能实现很多比人想象不到的效果。特别是随着 CSS3 的广泛使用，更多新奇的 CSS 作品涌现出来。首先给大家打来的是流行的 CSS 三角形绘制方法。</span>
+                    </div>
+            </div><div class="contactus">
+            <div class="contactus_logo"></div>
+            <div class="contactus_img"><img src="img/contactusimg.png" alt=""/></div>
+            <div class="contactus_content">
+                <span>公司名称：某某智能家居技术开发有限公司<br/>公司地址：天府软院 <br/>公司电话：400-12345678 <br/>公司传真：400-12345678<br/>业务负责人：黄先生 <br/>公司网址：www.maizi.com</span>
+            </div></div>
+        </div>
+        <!-- 中间下面部分-->
+        <div id="midbottom">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+<!--底部容器-->
+    <div id="bottombox"></div>
+</div>
+
+</body>
+</html>

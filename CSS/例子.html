@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+     li{
+         display: inline-block;
+
+            position: relative;
+            font-size: 20px;
+            font-weight: 900;
+            text-decoration: none;
+           width: 100px;
+        }
+        li:after{
+           content: attr(data);
+            font-size: 14px;
+            position: absolute;
+            top: 30px;
+            left: -15px;
+
+
+        }
+
+       li:hover{
+           color: #ff6600;
+       }
+    </style>
+</head>
+<body>
+<section>
+<ul>
+    <li data="产品中心">
+       •
+    </li>
+    <li data="关于我们">
+        •
+    </li>
+    <li data="产品中心">
+        •
+    </li>
+    <li data="关于我们">
+        •
+    </li>
+
+    <li data="产品中心">
+        •
+    </li>
+    <li data="关于我们">
+        •
+    </li>
+    <li data="产品中心">
+        •
+    </li>
+    <li data="关于我们">
+        •
+    </li>
+</ul>
+</section>
+ <div id="welcome" style="margin-top: 100px;background: red;height: 222px;width: 200px"><span style="height: 222px;width: 100%;line-height: 222px" class="wel">welcome</span></div>
+<br/>
+<hr/>
+<canvas id="myCanvas" width="500" height="700" style="border:1px solid #c3c3c3;">
+    Your browser does not support the canvas element.
+</canvas>
+</body>
+</html>
+<script type="text/javascript">
+//    alert('ok');
+    var c=document.getElementById("myCanvas");
+    var cxt=c.getContext("2d");
+    var img=new Image();
+    img.src='images/ad.jpg';
+    img.onload= function () {
+        cxt.drawImage(img,0,0);
+    }
+
+</script>

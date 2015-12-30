@@ -1,0 +1,15 @@
+angular.module('app',[])
+.controller('MyCtrl',function($scope){
+       $scope.msg="FUCK";
+        $scope.user={"uname":"","pwd":""};
+        $scope.errormsg="";
+        $scope.login=function(){
+           if($scope.user.uname=="admin"&&$scope.user.pwd=="123"){
+               $scope.errormsg="";
+               alert('success');
+           }
+            else{
+               $scope.errormsg="error";
+           }
+        }
+    });

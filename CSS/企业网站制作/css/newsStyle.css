@@ -1,0 +1,36 @@
+.newslist{
+    margin-bottom: 20px;
+}
+.newslist li{
+    margin-top: 10px;
+    transition: text-shadow 1s linear;
+
+}
+.newslist li:nth-child(5n+5){
+    border-bottom: 1px solid #c6c2c2;
+   padding-bottom: 10px;
+}
+.newslist li:last-child{
+    border: none;
+}
+.newslist li a{
+    text-decoration: none;
+    color: #444444;
+    display:inline-block;
+    width: 510px;
+    height: 18px;
+    vertical-align: top;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+.newslist li time{
+    display:inline-block;
+    width: 117px;
+    text-align: center;
+    vertical-align: top;
+    color: #444444;
+}
+.newslist li:hover{
+    text-shadow: 1px 5px 3px #000;
+}

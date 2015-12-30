@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://www.w3cplus.com/mcommon/zepto.1.1.3.js"></script>
+
+    <style>
+        body,html{
+
+            width: 100%;
+            height: 100%;
+            overflow-x:hidden;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header, .footer, .wrap-page {
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+        .header, .footer {
+            height: 44px;
+            background: cornflowerblue;
+            text-align: center;
+            line-height: 44px;
+            z-index: 999;
+            display: block;
+        }
+
+        .header {
+            top: 0;
+
+        }
+
+        .header p {
+            display: inline-block;
+        }
+
+        .footer {
+            bottom: 0;
+
+
+        }
+
+        .wrap-page {
+            top: 44px;
+            bottom: 44px;
+            overflow-y: auto;
+
+        }
+
+        .panel {
+            position: absolute;
+            top: -1px;
+            bottom: -1px;
+            left: 0;
+            z-index: 980;
+            width: 120px;
+            background-color: #333;
+            transform: translate3d(-120px, 0, 0);
+            -webkit-transition: -webkit-transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out;
+        }
+        .panelshow{
+            z-index: 980;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+        .wrap-container {
+            height:100% ;
+            -webkit-transition: -webkit-transform 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .panel-active {
+            -webkit-transform: translate3d(120px, 0, 0);
+            transform: translate3d(120px, 0, 0);
+            overflow-x: hidden;
+        }
+        .btn-list {
+            width: 44px;
+            height: 44px;
+            text-align: center;
+            cursor: pointer;
+            color: #fff;
+        }
+        .fl {
+            float: left;
+        }
+        .btn-list:before {
+            content: "";
+            width: 20px;
+            height: 2px;
+            margin-bottom: 5px;
+            background-color: #ccc;
+            display: inline-block;
+            box-shadow: 0 7px 0 #ccc, 0 -7px 0 #ccc;
+        }
+         .btn-list-other:before{
+             content: "";
+             width: 20px;
+             height: 2px;
+             margin-bottom: 5px;
+             background-color: red;
+             display: inline-block;
+             box-shadow: 0 7px 0 red, 0 -7px 0 red;
+         }
+
+
+    </style>
+</head>
+<body>
+<div class="wrap-container">
+    <header class="header">
+        <span id="panelSwitch" class="btn-list fl"></span>
+        <p class="title">标题栏</p>
+
+    </header>
+    <div class="wrap-page">
+        <section class="page">
+            俄土关系也成为巴黎气候变化大会上除了环境之外的一个重要议题。普京称，俄罗斯战机被击落一事在气候大会的所有双边会谈上都被提起。“所有同仁都认真听，并且绝大多数人认为土耳其没有任何击落俄罗斯轰炸机的必要性，该飞机没有对土耳其构成威胁。”当被问及是否对与土耳其的关系恶化感到遗憾时，普京说：“我个人感到非常遗憾，因为我多年来为建立这些关系付出了很多。”据俄罗斯卫星网报道，俄罗斯空军总参谋部称，叙利亚防空部队已经证实苏-24不曾越界。但英国广播公司援引美国国务院发言人特鲁多周一的讲话称，来自美国和土耳其的资料显示，俄罗斯战机侵犯了土耳其领空。埃尔多安与美国总统奥巴马在巴黎会面时，奥巴马强调，美国支持土耳其保护自己和自己领空的权利。他还呼吁俄土两国缓和关系，集中精力应对IS对于朱恭训和徐章国获得的补偿，岛内也相当关注。台“国防部”称，后续将尽最大能力，依“情报人员丧失人身自由补偿及救助办法”，办理朱、徐权益照顾及补偿事宜。《自由时报》12月1日称，“情报人员丧失人身自由补偿及救助办法”规定，丧失人身自由的情报人员获释返台或返驻地后，应依下列标准发给一次性慰问金：丧失人身自由未满5年者，发20万元(新台币，下同);5年以上未满10年者，40万元;丧失人身自由达10年以上者，50万元。朱恭训为“军情局”第四处副处长，徐章国为组长，都是上校军衔，被关押时间为9年5个月。报道称，“军情局”在两人获释返台后，已先发给每人各40万元精神抚慰金。此外，他们还可以获得各项补偿及慰助，包括俸给补偿金、医疗费、亲属营救费及探视费等共计7项。当年，台湾当局在确认朱恭训及徐章国遭大陆关押后，“军情局”即依规定向其家人发给一次补偿金，依据新修定的办法，这部分的数额为50万元;两人在被关押期间，原在“军情局”的俸给也由家人继续领取，还可领取每年三节慰问金。
+        </section>
+    </div>
+    <footer class="footer">
+        <p>尾部</p>
+    </footer>
+</div>
+
+<section class="panel">
+    <ul>
+        <li>Home</li>
+        <li>List</li>
+        <li>Demo</li>
+        <li>Download</li>
+    </ul>
+</section>
+</body>
+</html>
+<script>
+
+
+    $(function(){
+        var $container = $('.wrap-container');
+        var $panel=$('.panel');
+        function disableScroll(e) {
+            e.preventDefault();
+        }
+        $('#panelSwitch').click(function(){
+            if($container.hasClass('panel-active')&&$panel.hasClass('panelshow')){
+                $container.removeClass('panel-active');
+                $panel.removeClass('panelshow');
+               $('#panelSwitch').removeClass('btn-list-other');
+
+            }else{
+                $container.addClass('panel-active');
+                $panel.addClass('panelshow');
+                $('#panelSwitch').addClass('btn-list-other');
+
+
+            }
+        });
+    });
+
+
+</script>

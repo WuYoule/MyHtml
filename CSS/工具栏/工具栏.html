@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .toolbar {
+            position: fixed;
+            left: 50%;
+            bottom: 5px;
+
+        }
+       .toolbar-item,.toolbar-layer{
+           background-image: url(../UploadImage/toolbar.png);
+           background-repeat: no-repeat;
+       }
+        .toolbar-item {
+
+            display: block;
+            width: 52px;
+            height: 52px;
+
+            margin-top: 1px;
+            transition: background-position 1s;
+        }
+
+
+
+        .toolbar-item:hover .toolbar-layer {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .toolbar-item-wx {
+            background-position: 0 -798px;
+
+        }
+
+        .toolbar-item-wx .toolbar-layer {
+            height: 212px;
+            background-position: 0px 0px;
+            bottom: 150px;
+
+        }
+
+        .toolbar-item-wx:hover {
+            background-position: 0 -860px;
+        }
+
+
+
+
+        .toolbar-item-feedback {
+            background-position: 0 -426px;
+
+        }
+
+        .toolbar-item-feedback:hover {
+            background-position: 0 -488px;
+        }
+
+        .toolbar-item-app {
+            background-position: 0 -550px;
+
+        }
+
+        .toolbar-item-app .toolbar-layer {
+            height: 194px;
+            background-position: 0px -222px;
+            bottom: 45px;
+        }
+
+        .toolbar-item-app:hover {
+            background-position: 0 -612px;
+        }
+
+
+        .toolbar-item-top {
+            background-position: 0 -674px;
+
+        }
+
+        .toolbar-item-top:hover {
+            background-position: 0 -736px;
+        }
+
+        .toolbar-layer {
+            position: absolute;
+            right: 50px;
+            width: 172px;
+
+            opacity: 0;
+            transform-origin: right bottom;
+            filter: alpha(opacity=0);
+            transform: scale(0.01);
+
+            transition: all 1s;
+        }
+
+    </style>
+</head>
+<body>
+<div class="toolbar">
+    <a href="" class="toolbar-item toolbar-item-wx">
+        <span class="toolbar-layer"></span>
+    </a>
+    <a href="" class="toolbar-item toolbar-item-feedback"></a>
+    <a href="" class="toolbar-item toolbar-item-app">
+        <span class="toolbar-layer"></span>
+    </a>
+    <a href="" class="toolbar-item toolbar-item-top"></a>
+
+</div>
+
+</body>
+</html>

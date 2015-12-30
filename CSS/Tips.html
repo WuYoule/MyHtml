@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .tips{
+            position: relative;
+            background: #eaeaea;
+            cursor: help;
+            display: inline-block;
+            text-decoration: none;
+            color: #222;
+            outline: none;
+            margin-top: 100px;
+        }
+        .tips span{
+            visibility: hidden;
+            position: absolute;
+            bottom:  25px;
+            left:10px;
+            z-index: 999;
+            width: 150px;
+            /*margin-left:5px;*/
+            padding: 10px;
+            /*border:2px  solid #ddd;*/
+            opacity: .9;
+            background-color: #ddd;
+
+            background-image: -webkit-linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+            background-image: -moz-linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+            background-image: -ms-linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+            background-image: -o-linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+            background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 1px 0 rgba(255,255,255,.5) inset;
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 1px 0 rgba(255,255,255,.5) inset;
+            box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 1px 0 rgba(255,255,255,.5) inset;
+            text-shadow: 0 1px 0 rgba(255,255,255,.4);
+        }
+        .tips:hover{
+            border: 0;
+        }
+        .tips:hover span{
+            visibility: visible;
+        }
+
+        .tips span:before
+        /*,.tips span:after*/	{
+            content: "";
+            position: absolute;
+            z-index: 1000;
+            bottom: -8px;
+            left: 50%;
+            margin-left: -8px;
+            border-top: 8px solid #ddd;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 0;
+        }
+
+        /*.tips span:before{*/
+            /*border-top-color: #ccc;*/
+            /*bottom: 1px;*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+<a href="#" class="tips">
+    Tips Title
+    <span>description</span>
+</a>
+</body>
+</html>

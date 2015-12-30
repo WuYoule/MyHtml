@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+            body{
+                background-color: red;
+            }
+            /*/!* IE6、IE7变成绿色 *!/*/
+            /*@media screen\9 {*/
+                /*body {*/
+                    /*background: green;*/
+                /*}*/
+            /*}*/
+
+            /*/!* IE8变成蓝色 *!/*/
+            /*@media \0 screen {*/
+                /*body {*/
+                    /*background: blue;*/
+                /*}*/
+            /*}*/
+            /*/!*IE9和IE10变成黄色*!/*/
+            /*@media screen and (max-width:480px\0) {*/
+                /*body {*/
+                    /*background: yellow;*/
+                /*}*/
+            /*}*/
+
+
+
+    </style>
+    <script>
+        window.onload=function(){
+            checkWinSize();
+
+        }
+        var winWidth,winHeight;
+        function   checkWinSize(){
+            //获取宽度
+            if(window.innerWidth){
+                winWidth=window.innerWidth;
+
+            }
+            else if((document.body)&&(document.body.clientWidth)){
+                winWidth=document.body.clientWidth;
+            }
+
+           //获取高度
+            if(window.innerHeight){
+                winHeight=window.innerHeight;
+            }
+            else if((document.body)&&(document.body.clientHeight)){
+                winHeight=document.body.clientHeight;
+            }
+            if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth)
+            {
+                winHeight = document.documentElement.clientHeight;
+                winWidth = document.documentElement.clientWidth;
+            }
+            alert(winWidth+','+winHeight);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

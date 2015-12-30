@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        .trans_box{
+            width: 400px;
+            margin: 20px;
+            overflow: hidden;
+        }
+
+        .trans_image_box {
+            width: 2000px;
+            height: 300px;
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -o-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+        }
+        .trans_image {
+            width: 400px;
+            float: left;
+        }
+        .trans_image_trigger {
+            padding-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="trans_box">
+    <div id="transImageBox" class="trans_image_box">
+        <img class="trans_image" src="http://image.zhangxinxu.com/image/study/p/s500/ps1.jpg" />
+        <img class="trans_image" src="http://image.zhangxinxu.com/image/study/p/s500/ps2.jpg" />
+        <img class="trans_image" src="http://image.zhangxinxu.com/image/study/p/s500/ps3.jpg" />
+        <img class="trans_image" src="http://image.zhangxinxu.com/image/study/p/s500/ps4.jpg" />
+    </div>
+    <div id="transImageTrigger" class="trans_image_trigger">
+        <a class="next" href="#1">图片1</a>　<a href="#2">图片2</a>　<a href="#3">图片3</a>　<a href="#4">图片4</a>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    (function() {
+        $('.next').click(function(){
+            $('#transImageBox').css('margin-left','-400px');
+        })
+//        var $ = function(id) {
+//            return document.getElementById(id);
+//        };
+//        var oBox = $("transImageBox"),
+//                oTrigger = $("transImageTrigger").getElementsByTagName("a"),
+//                lTrigger = oTrigger.length;
+//
+//        if (oBox && lTrigger) {
+//            for (var i = 0; i<lTrigger; i+=1) {
+//                oTrigger[i].onclick = function() {
+//                    var index = Number(this.href.replace(/.*#/g, "")) || 1;
+//                    oBox.style.marginLeft = (1 - index) * 400 + "px";
+//                    return false;
+//                };
+//            }
+//        }
+    })();
+</script>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+
+
+			}
+			
+			body {
+				/*overflow: hidden;*/
+			}
+			
+			.nav-links li {
+				float: left;
+				width: 33.333%;
+				background: brown;
+				list-style: none;
+				text-align: center;
+			}
+			
+			.display-equal li {
+				display: inline-block;
+				width: 25%;
+				background: blueviolet;
+				list-style: none;
+				text-align: center;
+			}
+			
+			.table-equal {
+				display: table;
+				table-layout: fixed;
+				width: 100%;
+			}
+			
+			.table-equal li {
+				display: table-cell;
+				text-align: center;
+				background: yellowgreen;
+			}
+			
+			.flex-equal-center {
+				border: 1px solid #CCC;
+				margin: 20px;
+				height: 200px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			.children-flex,
+			.children-tranlate {
+				background: #0078E7 none repeat scroll 0% 0%;
+				color: #FFF;
+				width: 150px;
+				line-height: 5;
+				text-align: center;
+			}
+			
+			.tranlate-equal-center {
+				border: 1px solid #CCC;
+				margin: 20px;
+				height: 200px;
+				position: relative;
+			}
+			
+			.children-tranlate {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				/*-moz-transform: translate(-50%,-50%);*/
+			}
+			
+			.justify {
+				display: flex;
+				justify-content: space-between;
+				padding: 0px 20px;
+				background: #0078E7 none repeat scroll 0% 0%;
+				color: #FFF;
+				line-height: 32px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h2>float方式等分</h2>
+		<footer class="footer">
+			<ul class="nav-links">
+				<li>測試一</li>
+				<li>測試�?/li>
+				<li>測試�?/li>
+			</ul>
+		</footer>
+		<h2>display:inline-block等分</h2>
+		<ul class="display-equal">
+			<li>測試1</li>
+			<li>測試�?/li>
+			<li>測試�?/li>
+			<li>測試�?/li>
+		</ul>
+		<h2>table等分</h2>
+		<ul class="table-equal">
+			<li>測試1</li>
+			<li>測試�?/li>
+			<li>測試�?/li>
+			<li>測試�?/li>
+		</ul>
+		<h2>flex居中</h2>
+		<div class="flex-equal-center">
+			<div class="children-flex">子元素水平垂直居�?/div>
+		</div>
+
+		<h2>tranlate居中</h2>
+		<div class="tranlate-equal-center">
+			<div class="children-tranlate">子元素水平垂直居�?/div>
+		</div>
+
+		<h2>兩端對齊</h2>
+		<div class="justify">
+			<h4>左边对齐</h4><span>右边对齐</span></div>
+	</body>
+
+</html>

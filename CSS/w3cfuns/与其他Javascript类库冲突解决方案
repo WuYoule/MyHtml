@@ -1,0 +1,4 @@
+    $(document).ready(function() {
+       var $jq = jQuery.noConflict();
+       $jq('#id').show();
+    });

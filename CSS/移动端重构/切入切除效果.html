@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection"content="telephone=no, email=no" />
+		<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+		<style>
+			.wrapdiv {
+				width: 30%;
+				height: 200px;
+				background: blueviolet;
+				transform: translate3d(-2000px, 0, 0);
+			}
+			
+			.wrap {
+				width: 30%;
+				height: 200px;
+				background: brown;
+				transform: translate3d(-2000px, 0, 0);
+			}
+			/*transition*/
+			
+			.wrap {
+				transform: translate3d(-2000px, 0, 0);
+				-webkit-transition: -webkit-transform 0.3s ease-in-out;
+				transition: transform 0.3s ease-in-out;
+			}
+
+
+			
+			.translate-in {
+				transform: translate3d(0, 0, 0);
+			}
+			/*transition*/
+			
+			
+			/*animation*/
+			.left-in,
+			.left-out {
+				-webkit-animation-duration: 3s;
+				animation-duration: 3s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+			
+			@-webkit-keyframes left-in {
+				0% {
+					-webkit-transform: translate3d(-2000px, 0, 0);
+
+				}
+
+				100% {
+					-webkit-transform: translate3d(0, 0, 0);
+				}
+			}
+			
+			@keyframes left-in {
+				0% {
+					transform: translate3d(-2000px, 0, 0);
+				}
+				100% {
+					transform: translate3d(0, 0, 0);
+				}
+			}
+			
+			.left-in {
+				-webkit-animation-name: left-in;
+				animation-name: left-in;
+			}
+			
+			@-webkit-keyframes left-out {
+				0% {
+					-webkit-transform: translate3d(0, 0, 0);
+				}
+				100% {
+					-webkit-transform: translate3d(-2000px, 0, 0);
+				}
+			}
+			
+			@keyframes left-out {
+				0% {
+					transform: translate3d(0, 0, 0);
+				}
+				100% {
+					transform: translate3d(-2000px, 0, 0);
+				}
+			}
+			
+			.left-out {
+				-webkit-animation-name: left-out;
+				animation-name: left-out;
+			}
+			/*animation*/
+		</style>
+	</head>
+
+	<body>
+		<div class="wrapdiv left-in"></div>
+		<div class="wrap"></div>
+		<button id="togglebtn">切换</button>
+
+	</body>
+
+</html>
+<script>
+     $('.wrapdiv').addClass('left-in');
+    setTimeout(function(){
+    	$('.wrapdiv').addClass('left-out');
+    },5000);
+	$('#togglebtn').click(function(){
+		$('.wrap').toggleClass('translate-in');
+	});
+</script>

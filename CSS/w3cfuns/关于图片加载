@@ -1,0 +1,15 @@
+12.预加载图片
+如果你的页面中使用了很多不可见的图片（如：hover 显示），你可能需要预加载它们：
+$.preloadImages = function () {
+  for (var i = 0; i < arguments.length; i++) {
+    $('<img>').attr('src', arguments);
+  }
+};
+$.preloadImages('img/hover1.png', 'img/hover2.png');
+
+13.检查图片是否加载完成
+有时候你需要确保图片完成加载完成以便执行后面的操作：
+$('img').load(function () {
+  console.log('image load successful');
+});
+你可以把 img 替换为其他的 ID 或者 class 来检查指定图片是否加载完成。

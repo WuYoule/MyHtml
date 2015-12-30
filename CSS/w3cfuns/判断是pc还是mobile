@@ -1,0 +1,35 @@
+
+
+判断设备类型是否是移动端或者pc端
+
+热度 9已有 339 次阅读2015-11-17 17:51 |系统分类:JavaScript| js方法
+function clientIsPC(){
+        var userAgentInfo = navigator.userAgent;
+    var Agents = ["Android", "iPhone",
+                "SymbianOS", "Windows Phone",
+                "iPad", "iPod"];
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
+        }
+    }
+    return flag;
+}
+
+//------------------另一种方法-----------------
+function IsPC()
+                {
+                     var userAgentInfo = navigator.userAgent;
+                      var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+                       var flag = true;
+                     for (var v = 0; v < Agents.length; v++) {
+                        if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+                      }
+                       return flag;
+                }
+
+
+
+判断返回结果，来执行脚本；flag=true 为pc；false为移动

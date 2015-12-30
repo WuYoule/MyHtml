@@ -1,0 +1,23 @@
+/*导航*/
+body{
+    font-family: "Microsoft Yahei",sans-serif;
+    padding-top: 70px;
+}
+
+/*警告框距离上端距离*/
+.alert.alert-danger.alert-dismissible.fade.in {
+    margin-top: 70px;
+}
+
+
+/*头像*/
+.wh64{
+    width: 64px;
+    height: 64px;
+    border-radius:50% ;
+}
+
+/*留言按钮 距离上面的距离*/
+.mar_t15{
+    margin-top: 15px;
+}

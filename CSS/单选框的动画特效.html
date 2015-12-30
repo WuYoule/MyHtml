@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .radio-1{
+            width: 980px;
+            margin: 0 auto;
+            padding: 3% 0;
+            background: #3cc;
+            text-align:center;
+        }
+        .radio-1 label{
+            display: inline-block;
+            position: relative;
+            width: 28px;
+            height: 28px;
+            border:1px #ccc solid;
+            background-color: #fff;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+
+        }
+        .radio-1 label:after{
+            content: '';
+            position:absolute;
+            top:4px;
+            left: 4px;
+            width: 20px;
+            height: 20px;
+            background-color: #666;
+            border-radius: 50%;
+            transform: scale(0);
+
+        }
+        .radio-1 [type="radio"]{
+            display: none;
+        }
+        .radio-1 [type="radio"]:checked+label{
+            background-color: #eee;
+            transition: background-color 0.2s ease-out;
+        }
+      .radio-1 [type="radio"]:checked+label:after{
+          transform: scale(1);
+          transition: transform 0.2s ease-in;
+      }
+
+        /*----------------------------------华丽丽的分割线-------------------------------------*/
+        .radio-2{
+            width: 980px;
+            margin: 20px auto;
+            padding: 3% 0;
+            background: #2b669a;
+            text-align:center;
+
+
+        }
+        .radio-2 label{
+            display: inline-block;
+            position: relative;
+            width: 28px;
+            height: 28px;
+            overflow: hidden;
+            border:1px #ccc solid;
+            background-color: #fff;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+
+        }
+        .radio-2 [type="radio"]{
+            display: none;
+        }
+        .radio-2 label:after{
+            content: '';
+            background-color: #666;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            border-radius: 50%;
+            top: 4px;
+            left: 4px;
+            transform-origin: -2px 50%;
+            transform: rotate(-180deg);
+            transition: transform 0.2s ease-out;
+        }
+        .radio-2 [type="radio"]:checked +label:after{
+            transform: rotate(0deg);
+            transition:  transform 0.2s ease-in;
+        }
+
+    </style>
+</head>
+<body>
+<div class="radio-1">
+    <input type="radio" name="radio-1" id="radio-1-1"/>
+    <label for="radio-1-1"></label>
+    <input type="radio" name="radio-1" id="radio-1-2"/>
+    <label for="radio-1-2"></label>
+    <input type="radio" name="radio-1" id="radio-1-3"/>
+    <label for="radio-1-3"></label>
+</div>
+
+
+
+<div class="radio-2">
+    <input type="radio" name="radio-1" id="radio-2-1" checked="checked"/>
+    <label for="radio-2-1"></label>
+    <input type="radio" name="radio-1" id="radio-2-2"/>
+    <label for="radio-2-2"></label>
+    <input type="radio" name="radio-1" id="radio-2-3"/>
+    <label for="radio-2-3"></label>
+</div>
+</body>
+</html>

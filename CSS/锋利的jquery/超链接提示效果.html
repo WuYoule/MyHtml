@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        /* tooltip */
+        #tooltip{
+            position:absolute;
+            border:1px solid #333;
+            background:#95B8E7;
+            padding:1px;
+            color:#333;
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<p><a href="#" class="tooltip" title="这是我的提示1.">提示1</a></p>
+
+<p><a href="#" class="tooltip" title="这是我的提示2.">提示2</a></p>
+
+<p><a href="#" title="这是自带提示1.">自带提示1</a></p>
+
+<p><a href="#" title="这是自带提示2.">自带提示2</a></p>
+</body>
+</html>
+<script>
+    $(function(){
+        var x=10;
+        var y=20;
+        $("a.tooltip").mouseover(function(e){
+            this.myTitle=this.title;
+            this.title="";
+            //创建div 元素
+            var tooltip="<div id='tooltip'>"+this.myTitle+"</div>";
+            $('body').append(tooltip);//将它追加到文档
+            $('#tooltip').css({
+                "top":(e.pageY+y)+"px",
+                "left":(e.pageX+x)+"px"
+
+            }).show('fase');
+        }).mouseout(function(){
+            this.title=this.myTitle;
+            $('#tooltip').remove();
+        }).mousemove(function(e){
+            $('#tooltip').css({
+                "top": (e.pageY+y)+"px",
+                "left":(e.pageX+x)+"px"
+
+            });
+        });
+    })
+
+</script>

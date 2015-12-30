@@ -1,0 +1,18 @@
+网站:Can I Use?
+    codepen  设置Vendor Prefixing 为autoprefixer
+
+
+给你 iepng.js 从此不用再考虑IE6 PNG图片透明的问题了
+    <!--[if lte IE 6]>
+    <script src="js/iepng.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        EvPNG.fix('div,img,input,span,h2'); ?
+    </script>
+    <![endif]--
+
+
+  早前都是使用Modernizr库来做一些浏览器对属性的检测
+  @supports和Modernizr相比，在速度、性能和功能都要比Modernizr强。
+
+  国内cdn加速  http://cdn.code.baidu.com
+              http://libs.useso.com

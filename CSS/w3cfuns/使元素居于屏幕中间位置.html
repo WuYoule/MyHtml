@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+          jQuery.fn.center=function(){
+              this.css('position','fixed');
+              this.css("top", ( $(window).height() - this.height() ) / 2+ "px");
+              this.css("left", ( $(window).width() - this.width() ) / 2 + "px");
+              return this;
+          }
+            $('.center').center();
+        })
+    </script>
+</head>
+<body>
+<div class="wrap" style="width: 100%;height: 2000px"></div>
+<div class="center" style="width:200px;height:200px;background:#ccc;">
+    我现在在屏幕的中间位置哦！
+</div>
+</body>
+</html>

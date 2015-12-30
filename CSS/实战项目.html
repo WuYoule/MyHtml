@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        body{
+            font: 14px/24px 'Microsoft Yahei';
+        }
+        .wp{
+            width: 960px;
+            margin: 0 auto;
+        }
+        .z{
+            float: left;
+        }
+        .y{
+            float: right;
+        }
+        .cl{
+            clear: both;
+        }
+        .mr_0{
+            margin: 0;
+        }
+        /*解决各种浏览器 图片可能出现边框 */
+        img{
+            border: none;
+        }
+
+        .top{
+            width: 100%;
+            height: 24px;
+            background-color: #303030;
+            line-height: 24px;
+            color: #d8d8d8;
+        }
+        .top span{
+            margin-right: 15px;
+        }
+        .top .mr_0{
+            margin: 0;
+        }
+        .top a{
+            color: #d8d8d8;
+            text-decoration:none;
+        }
+        .top a:hover{
+            color: #f60;
+        }
+        /*logo*/
+        .logos{
+            height: 59px;
+            margin: 15px 0;
+        }
+        /*搜索*/
+        .sousuo{
+            width: 330px;
+            height: 41px;
+            margin-top: 8px;
+        }
+        .sousuo td{
+            height: 41px;
+        }
+        .s_z{
+            width: 6px;
+            background: url("images/s_z.jpg") no-repeat;
+        }
+        .s_c{
+            width: 240px;
+            background: url("images/s_c.jpg") repeat-x;
+        }
+        .s_y{
+            width: 78px;
+            background: url("images/s_r.jpg") no-repeat ;
+        }
+        .s_c input{
+            width: 200px;
+            height: 33px;
+            line-height: 33px;
+            border: none;
+            margin-top: 2px;
+        }
+        .s_y button{
+            width: 78px;
+            height: 41px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        /*电话*/
+        .phone span{
+            font-size: 26px;
+            color:darkred;
+        }
+        .phone {
+          height: 59px;
+            line-height: 59px;
+            margin-left: 15px;
+
+        }
+        /*导航条*/
+        .nav{
+            height: 39px;
+            width: 100%;
+            background: url("images/nav_bg.jpg") repeat-x;
+        }
+        .nav li{
+            list-style: none;
+           float: left;
+            line-height: 39px;
+            padding: 0 28px;
+        }
+        .nav li.a,li:hover{
+            background: url("images/nav_hover.jpg")  repeat-x;
+        }
+        .nav a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+        }
+         /*广告*/
+        .ad{
+            margin-bottom: 10px;
+        }
+        /*center*/
+        .desc{
+           width: 540px;
+            height: 330px;
+            margin-right: 20px;
+        }
+        .jj_c img{
+            float: left;
+            margin: 0 10px 10px 0;
+
+
+        }
+        .jj_c p{
+            color: #616161;
+            text-indent: 24px;
+        }
+        .news{
+            width: 400px;
+            height: 330px;
+
+        }
+        .product{
+            width: 100%;
+            height: 330px;
+        }
+        .tit
+        {
+            padding-bottom: 8px;
+            border-bottom: 1px solid darkred;
+            position:  relative;
+            margin-bottom: 10px;
+        }
+        .tit span{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+        }
+        .tit a{
+            color: darkred;
+            text-decoration: none;
+        }
+        /*新闻*/
+        .news_cc{
+
+        }
+        .news_cc li{
+            list-style: none;
+            height: 24px;
+            line-height: 24px;
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 6px;
+            background: url("images/list_bg.jpg") no-repeat center left;
+        }
+        .news_cc li.a{
+            background: none;
+            padding: 0px;
+            height: 76px;
+        }
+        .news_cc img{
+            float: left;
+            margin: 0 10px 10px 0;
+        }
+        .news_cc span{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            color: #888888;
+            font-size: 12px;
+        }
+        .news_cc h3{
+            font-weight: normal;
+            font-size: 14px;
+        }
+        .news_cc a{
+            color: #616161;
+           text-decoration: none;
+        }
+        .news_cc p{
+            font-size: 12px;
+            color:#888;
+            text-indent: 24px;
+        }
+        /*产品*/
+        .pro_cc{
+
+        }
+        .pro_cc li{
+            list-style: none;
+            margin: 0 10px 10px 0;
+            float: left;
+            width: 151px;
+            height: 96px;
+            overflow: hidden;
+            position: relative;
+        }
+        .pro_cc span{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 14px;
+            height: 20px;
+            width: 131px;
+            padding: 0 10px;
+            background: darkred;
+            color: #fff;
+            overflow: hidden;
+
+            display: none;
+        }
+        .pro_cc li a:hover span{
+            display: block;
+        }
+        .pro_cc li img{
+            float: left;
+        }
+        .pro_cc li.mr_0{
+            margin-right: 0;
+        }
+        /*footer*/
+        .footer{
+            height: 103px;
+            width: 100%;
+            background: url("images/footer_bg.jpg") repeat-x;
+
+        }
+        .footer_top{
+            height: 80px;
+            line-height: 80px;
+            color: #fff;
+        }
+
+        .footer_top a{
+
+            color: #fff;
+            text-decoration: none;
+        }
+        .footer_top .z{
+            font-size: 16px;
+        }
+        .footer_bottom{
+            color:#fff;
+        }
+        .footer_bottom p{
+            color:#f60;
+        }
+        .footer_bottom a{
+            color: #888;
+            text-decoration: none;
+            margin-right: 10px ;
+        }
+        .footer_bottom a:hover{
+            color: #f60;
+        }
+        .tool{
+            /*width: 40px;*/
+            /*height: 205px;*/
+            position: fixed;
+            bottom: 170px;
+            right: 60px;
+            /*background: url("images/top_tool.jpg") no-repeat;*/
+        }
+        .tool li{
+            list-style: none;
+        }
+        .tool li:nth-child(1){
+            background: url("images/top_tool.jpg") no-repeat;
+            width: 40px;
+            height: 50px;
+            overflow: hidden;
+        }
+        .tool li:nth-child(2){
+            background: url("images/top_tool.jpg") no-repeat;
+            background-position: 0 -54px;
+            width: 40px;
+            height: 50px;
+            overflow: hidden;
+        }
+        .tool li:nth-child(3){
+            background: url("images/top_tool.jpg") no-repeat;
+            width: 40px;
+            height: 50px;
+            overflow: hidden;
+            background-position: 0 -110px;
+
+        }
+        .tool li:nth-child(4){
+            background: url("images/top_tool.jpg") no-repeat;
+            width: 40px;
+            height: 50px;
+            background-position: 0 -165px;
+            overflow: hidden;
+
+        }
+    </style>
+</head>
+<body>
+<div class="tool">
+    <ul>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+    </ul>
+</div>
+<div class="header">
+    <div class="top">
+      <div class="wp">
+          <div class="z">
+              <span>
+                  <a href="">设为首页</a>
+              </span>
+               <span>
+                  <a href="">收藏本站</a>
+              </span>
+          </div>
+          <div class="y">
+               <span>
+                  2015年2月3日
+              </span>
+               <span class="mr_0" >
+                 多云转晴 23'c
+              </span>
+          </div>
+      </div>
+    </div>
+    <div class="wp">
+    <div class="logos">
+        <div class="logo z">
+            <h1><a src="index.html"><img src="images/logo.jpg"/></a></h1>
+        </div>
+
+        <div class="phone y">
+            <span>客服电话：400-000-000</span>
+        </div>
+
+        <div class="sousuo y">
+            <form action="index.html" method="get">
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td class="s_z z"></td>
+                        <td class="s_c z">
+                          <input type="text" name="text" id="s_c_text"/>
+
+                        </td>
+                        <td class="s_y z">
+                            <button type="submit" name="submit"></button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+    </div>
+    </div>
+    <div class="nav">
+     <div class="wp">
+         <ul>
+             <li class="a">
+                 <a href="">网站首页</a>
+             </li>
+             <li>
+                 <a href="">公司简介</a>
+             </li>
+             <li>
+                 <a href="">业务描述</a>
+             </li>
+             <li>
+                 <a href="">服务范围</a>
+             </li>
+             <li>
+                 <a href="">产品中心</a>
+             </li>
+             <li>
+                 <a href="">人才管理</a>
+             </li>
+             <li>
+                 <a href="">在线留言</a>
+             </li>
+             <li>
+                 <a href="">联系我们</a>
+             </li>
+
+         </ul>
+     </div>
+    </div>
+
+</div>
+<div class="center">
+    <div class="wp">
+        <div class="ad">
+            <img src="images/ad.jpg" alt=""/>
+        </div>
+    <div class="desc z">
+        <div class="tit">
+            <img src="images/jianjie.jpg" alt=""/>
+           <span> <a href="">More</a></span>
+        </div>
+        <div class="jj_c">
+            <img src="images/jianjie_img.jpg" alt=""/>
+            <p>麦子学院，国内第一家在美国建立商务中心的IT在线教育机构，目前已与美国知名教育公司取得合作，未来将源源不断向国内输出大量高质量教育资源。</p>
+            <p>前身麦可网，2014年，麦可网完成千万级A轮融资，并更名为”麦子学院“，同时通过“麦子圈”IT职业实名社交圈——提供包括企业招聘对接，猎头，项目外包，经验分享，职业交友等一系列增值服务。</p>
+            <p>做在线职业教育示范学院，将教育和课程做到极致。除了提供高质量的课程学习之外，也提供包括就业推荐，职业交友，项目外包，创业服务等全面的增值服务，并且线上线下结合，移动设备和传统网络相结合，打造IT职业教育的一个完整生态链。</p>
+        </div>
+    </div>
+    <div class="news z">
+        <div class="tit">
+            <img src="images/xinwen.jpg" alt=""/>
+            <span> <a href="">More</a></span>
+        </div>
+        <div class="news_cc">
+            <ul>
+                <li class="a">
+                    <a href="">
+
+                        <img src="images/list_img.jpg" alt=""/>
+
+                        <h3>Web前端开发之HTML+CSS基础入门</h3>
+                        <p>
+                            以高端IT技术型人才培养及服务为核心，探索及倡导技术交流创新模式...
+                        </p>
+
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <h3>Web前端开发之HTML+CSS基础入门</h3>
+                        <span>2015-08-09</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <h3>Web前端开发之HTML+CSS基础入门</h3>
+                        <span>2015-08-09</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <h3>Web前端开发之HTML+CSS基础入门</h3>
+                        <span>2015-08-09</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <h3>Web前端开发之HTML+CSS基础入门</h3>
+                        <span>2015-08-09</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <h3>Web前端开发之HTML+CSS基础入门</h3>
+                        <span>2015-08-09</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <h3>Web前端开发之HTML+CSS基础入门</h3>
+                        <span>2015-08-09</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <h3>Web前端开发之HTML+CSS基础入门</h3>
+                        <span>2015-08-09</span>
+                    </a>
+
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="product">
+        <div class="tit">
+            <img src="images/chanpin.jpg" alt=""/>
+            <span> <a href="">More</a></span>
+        </div>
+        <div class="pro_cc">
+            <ul>
+                <li><a href=""><img src="images/chanpin_img.jpg" alt=""/><span>标题1</span></a></li>
+                <li><a href=""><img src="images/chanpin_img.jpg" alt=""/><span>标题1</span></a></li>
+                <li><a href=""><img src="images/chanpin_img.jpg" alt=""/><span>标题1</span></a></li>
+                <li><a href=""><img src="images/chanpin_img.jpg" alt=""/><span>标题1</span></a></li>
+                <li><a href=""><img src="images/chanpin_img.jpg" alt=""/><span>标题1</span></a></li>
+                <li class="mr_0"><a href=""><img src="images/chanpin_img.jpg" alt=""/><span>标题1</span></a></li>
+                <li><a href=""><img src="images/chanpin_img.jpg" alt=""/><span>标题1</span></a></li>
+                <li><a href=""><img src="images/chanpin_img.jpg" alt=""/><span>标题1</span></a></li>
+                <li><a href=""><img src="images/chanpin_img.jpg" alt=""/><span>标题1</span></a></li>
+                <li><a href=""><img src="images/chanpin_img.jpg" alt=""/><span>标题1</span></a></li>
+                <li><a href=""><img src="images/chanpin_img.jpg" alt=""/><span>标题1</span></a></li>
+                <li class="mr_0"><a href=""><img src="images/chanpin_img.jpg" alt=""/><span>标题1</span></a></li>
+            </ul>
+
+        </div>
+    </div>
+    </div>
+
+</div>
+<div class="cl"></div>
+
+<div class="footer">
+    <div class="wp">
+
+    <div class="footer_top">
+        <span class="z">
+            <a href="">关于我们</a> |
+            <a href="">联系我们</a> |
+            <a href="">加入我们</a> |
+            <a href="">给我留言</a>
+        </span>
+        <span class="y">
+            @2015 HelloWorld版权所有 ICP证：沪ICP备1300000号
+        </span>
+
+    </div>
+
+    <div class="footer_bottom">
+        <p>友情链接：<a href="">麦子学院</a><a href="">慕课网</a></p>
+    </div>
+    </div>
+</div>
+
+</body>
+
+</html>

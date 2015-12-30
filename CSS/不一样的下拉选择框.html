@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+
+        }
+        body{
+            background-color: #00b500;
+            color: #333;
+        }
+        .contain{
+            padding-top: 5%;
+        }
+        .contain .select{
+            width: 300px;
+            height: 40px;
+            margin: 0px auto;
+            font-family:'Microsoft Yahei';
+            font-size: 16px;
+            background-color: #fff;
+            position: relative;
+        }
+        .select:after{
+            content: "";
+            display:block;
+            width: 10px;
+            height: 10px;
+            border-bottom: 1px #ccc solid;
+            border-left: 1px #ccc solid;
+            position: absolute;
+            top:11px;
+            right: 12px;
+            transform: rotate(-45deg);
+            transition: all 0.3s ease-in;
+        }
+        .contain .select p{
+            padding: 0 15px;
+            line-height: 40px;
+            cursor: pointer;
+            color: #00b500;
+        }
+        .contain .select ul{
+            list-style: none;
+            background-color: white;
+            width: 100%;
+            overflow-y: auto;
+            position: absolute;
+            top: 40px;
+            left: 0px;
+            max-height: 0px;
+
+        }
+        .contain .select ul li{
+            line-height: 40px;
+            cursor: pointer;
+            padding: 0 15px;
+
+
+        }
+        .contain .select ul li:hover{
+
+            background-color: #e0e0e0;
+
+        }
+        .contain .select ul li.selected{
+
+            background-color: #39f;
+            color: #fff;
+        }
+       .contain .open ul{
+           max-height: 240px;
+           transform-origin: top;
+            animation: slide-down 0.5s ease-in;
+            /*transition: max-height 0.3s ease-out;*/
+
+        }
+        .contain .open:after{
+            transform: rotate(135deg);
+            top: 18px;
+            transition: all 0.3s ease-in;
+        }
+        @keyframes slide-down {
+            0%{transform: scale(1,0);}
+            25%{transform: scale(1,1.2);}
+            50%{transform: scale(1,0.85);}
+            75%{transform: scale(1,1.05);}
+            100%{transform: scale(1,1);}
+        }
+    </style>
+    <script>
+        $(function(){
+             $('.select>p').on('click',function(e){
+                $('.select').toggleClass('open');
+                 e.stopPropagation();
+             })
+            $('.select ul li').on('click',function(e){
+                var _this=$(this);
+                $('.select> p').text(_this.attr('data-value'));
+                _this.addClass('selected').siblings().removeClass('selected');
+                 $('.select').removeClass('open');
+                e.stopPropagation();
+            });
+            $(document).on('click',function(){
+                $('.select').removeClass('open');
+
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="contain ">
+    <div class="select">
+        <p>所有选项</p>
+        <ul>
+            <li data-value="所有选项" class="selected">所有选项</li>
+            <li data-value="HTML">HTML</li>
+            <li data-value="CSS3">CSS3</li>
+            <li data-value="Javascript">Javascript</li>
+            <li data-value="Jquery">Jquery</li>
+
+
+            <li data-value="HTML">HTML</li>
+            <li data-value="CSS3">CSS3</li>
+            <li data-value="Javascript">Javascript</li>
+            <li data-value="Jquery">Jquery</li>
+
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

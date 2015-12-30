@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas ID="canvas" style="display:block;margin: 0 auto;border: 1px solid #aaa" >
+    不支持CANVAS.
+</canvas>
+<canvas ID="offcanvas" style="display:none;margin: 0 auto;border: 1px solid #aaa" >
+    不支持CANVAS.
+</canvas>
+<script>
+    var canvas=document.getElementById("canvas")
+    var content=canvas.getContext("2d")
+
+    var offcanvas=document.getElementById("offcanvas")
+    var offcontent=canvas.getContext("2d")
+
+    var image=new Image()
+   var isMouseDown=false
+
+    window.onload=function(){
+        canvas.width=1024
+        canvas.height=768
+
+        image.src='UploadImage/00.jpg'
+        image.onload=function(){
+          content.drawImage(image,0,0)
+        }
+
+    }
+    function windowToCanvas(x,y){
+        var bbox=canvas.getBoundingClientRect()
+      return {x:x-bbox.left,y:y-bbox.top}
+    }
+    canvas.onmousedown=function(e){
+        e.preventDefault()
+       var point=windowToCanvas(e.clientX, e.clientY)
+       console.log(point.x,point.y)
+
+        isMouseDown=true
+    }
+    //鼠标移动
+    canvas.onmousemove=function(){
+//        e.preventDefault()
+        if(isMouseDown==true){
+            var point=windowToCanvas(e.clientX, e.clientY)
+
+        }
+    }
+    canvas.onmouseup=function(e){
+      //  e.preventDefault()
+        isMouseDown=false
+    }
+    canvas.onmouseout=function(e){
+//        e.preventDefault()
+        isMouseDown=false
+    }
+</script>
+</body>
+</html>

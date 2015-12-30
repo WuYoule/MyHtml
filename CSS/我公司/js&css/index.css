@@ -1,0 +1,210 @@
+html,body{
+    width:100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #ead6c2;
+    background-image: url(../images/ty/mobilebg.jpg);
+    background-size: 100% auto;
+    font-size: 62.5%;
+    font-family: "MS Serif", "New York", serif;
+    color: #57524b;
+}
+
+#header{
+    width: 100%;
+    height: 40px;
+    background-color: rgba(255,255,255,0.5);
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    font-size: 1.4rem;
+    line-height: 40px;
+    font-weight: normal;
+}
+#left{
+    float: left;
+    padding-left: 15px;
+}
+#right{
+    float: right;
+}
+#right_login_reg{
+    display: none;
+}
+#right_login_reg span:nth-child(2){
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#right_login_reg span:nth-child(3){
+    padding-right: 15px;
+    color: red;
+}
+#right_info{
+    display: block;
+}
+#right_info span:first-child{
+    padding-right: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+#right_info span:nth-child(2){
+    background-color: #e85600;
+    display: inline-block;
+    height: 26px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 30px;
+
+    margin-right: 10px;
+    padding: 0 5px;
+    color: white;
+}
+
+
+/*内容区域*/
+#pbody{
+   width: 100%;
+    height: 100%;
+    overflow: auto;
+
+}
+#pageIndex{
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+}
+#pageIndex #feichuan{
+    background-image: url(../images/ty/mobile_index_fc_bg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 29%;
+}
+#pageIndex #logo{
+    background-image: url(../images/ty/mobile_index_logo.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 55.6%;
+    height: 27%;
+    margin: 0 auto;
+    margin-top: -90px;
+}
+#pageIndex #lunbo{
+    background-image: url(../images/ty/mobile_index_lunbobg.png);
+    background-size: 100% 100%;
+    width: 86.6%;
+    height: 24.74%;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+ #lunbo #lunboimg{
+     width: 100%;
+     height: 100%;
+     overflow: hidden;
+     background-image: url(../images/ty/mobile_index_lunbobg_img1.png);
+     background-size: 100% 100%;
+}
+
+ #lunbobtn{
+     width: 100%;
+     text-align: center;
+     margin-top: 20px;
+ }
+ #lunbobtn img{
+     width: 15px;
+     margin-left: 10px;
+ }
+
+ #more{
+    background-image: url(../images/ty/mobile_index_ckmore.png);
+    background-size: 100% 100%;
+    width: 26%;
+    margin-left: 37%;
+    height: 5.8%;
+    margin-top: 30px;
+ }
+ #grabvotes{
+    width: 73%;
+    height: 8.72%;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-image: url(../images/ty/qiangpiao.png);
+    background-size: 100% 100%;
+ }
+ #nothing{
+     width: 37%;
+     height: 7.63%;
+     margin: 0 auto;
+     margin-top: 20px;
+     background-size: 100% 100%;
+ }
+ /*故事背景*/
+#background{
+    height:auto;
+    padding-bottom:30px;
+    background-image:url(../images/ty/mobile_index_fly_bg.png);
+    background-size:30%;
+    background-repeat:no-repeat;
+    background-position:bottom left;
+}
+#background_biaoti{
+    width: 100%;
+    height: 75px;
+    background-image: url(../images/ty/mobile_index_bjgs.png);
+    background-size: 100% 100%;
+}
+#background_content{
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    line-height: 25px;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+#background_more{
+    background-image: url(../images/ty/mobile_index_ckxq.png);
+    background-size: 100% 100%;
+    width: 26%;
+    height: 8%;
+    margin-left: 37%;
+    height: 37px;
+    margin-top: 30px;
+}
+/*角色资料*/
+#character{
+    height: 70%;
+    background-image: url(../images/ty/mobile_index_hc_bg.png);
+    background-size: 30%;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+
+}
+#character_biaoti{
+    background-image: url(../images/ty/mobile_index_jszl.png);
+    background-size: 100% 100%;
+
+    width: 100%;
+    height: 75px;
+
+}
+#character_content{
+    width: 100%;
+    height: 50%;
+    font-size: 1.5rem;
+    overflow: hidden;
+    text-align: center;
+}
+#character_content img{
+    width: 24%;
+    margin: 0 10px;
+}
+#character_more{
+    background-image: url(../images/ty/mobile_index_ckmore.png);
+    background-size: 100% 100%;
+    width: 26%;
+    margin-left: 37%;
+    height: 8%;
+    margin-top: 30px;
+}

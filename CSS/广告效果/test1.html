@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{
+            width: 100%;
+            height: 1280px;
+            background-color: #fa96b5;
+        }
+        .ad{
+            width: 400px;
+            height: 300px;
+            background-color: #007aff;
+            position: fixed;/*IE6不支持*/
+            bottom: 0;
+            right: 0;
+        }
+        #closeBtn{
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            color: white;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var ad=document.getElementById("adiv");
+            var close=document.getElementById("closeBtn");
+            close.onclick=function(){
+//                ad.style.display="none";
+                ad.className="hide";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div id="wrap">这儿是内容</div>
+<div class="ad" id="adiv">
+    <span  id="closeBtn">X</span>
+</div>
+
+</body>
+</html>

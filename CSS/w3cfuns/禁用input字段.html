@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            //有时你可能需要禁用表单的 submit 按钮或者某个 input 字段，直到用户执行了某些操作（例如，检查“已阅读条款”复选框）。可以添加 disabled 属性，直到你想启用它时：
+            $('input[type="submit"]').prop('disabled', true);
+            //你要做的就是执行 removeAttr 方法，并把要移除的属性作为参数传入：
+           //$('input[type="submit"]').removeAttr('disabled');
+        })
+    </script>
+</head>
+<body>
+<input type="submit" value="修改"/>
+</body>
+</html>

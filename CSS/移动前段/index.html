@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no">
+    <title>移动端前端实训</title>
+    <link rel="apple-touch-icon-precomposed" href="images/haoroomsicon.jpg"/>
+    <link rel="apple-touch-startup-image" href="images/haoroomsicon.jpg"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <script type="application/javascript" src="js/jquery.js"></script>
+    <script type="application/javascript" src="js/swiper.min.js"></script>
+
+    <script>
+        $(function () {
+            loadCanvas();
+            var TempPointY = 0;
+            var TempMoveY = 0;
+
+            var canvas = document.getElementById("canvas");
+            canvas.addEventListener("touchstart", function (event) {
+                event.preventDefault();// 阻止浏览器默认事件，重要
+                var touch = event.targetTouches[0];
+                // 把元素放在手指所在的位置
+                TempPointY = touch.pageY;
+//            alert('ok1');
+            }, false);
+            canvas.addEventListener("touchmove", function () {
+                event.preventDefault();// 阻止浏览器默认事件，重要
+                var touch = event.targetTouches[0];
+                // 把元素放在手指所在的位置
+                TempMoveY = touch.pageY;
+//              alert('ok');
+            }, false);
+            canvas.addEventListener("touchend", function () {
+                if (TempMoveY != 0) {
+                    var distance = TempMoveY - TempPointY;
+                    if (distance > 30) {
+
+//                    alert('下滑');
+
+
+                    } else if (distance < -30) {
+//                    alert("上拉")
+                        plusLi();
+
+
+                    }
+
+                }
+
+                TempPointY = 0;
+                TempMoveY = 0;
+            }, false)
+        })
+        function loadCanvas() {
+
+
+            var imglength = $("canvas").length;
+            if (imglength > 0) {
+                $("canvas").each(function () {
+                    var imgSrc = $(this).attr('data-src');
+
+                    var imageObj = new Image();
+                    imageObj.canvas = $(this)[0];
+                    var cvs = imageObj.canvas.getContext('2d');
+                    if (cvs) {
+                        imageObj.onload = function () {
+                            imageObj.canvas.width = this.width;
+                            imageObj.canvas.height = this.height;
+                            cvs.drawImage(this, 0, 0);
+                            $(imageObj.canvas).css("background", "none");
+                        }
+                        imageObj.src = imgSrc;
+                    }
+                })
+            }
+        }
+        function plusLi() {
+            alert('plus');
+            $("#canvas ul").append("<li ><div class='pdiv'><p class='ptag3' title='限购'></p><div class='div1'><a href='#'><canvas data-src='images/product/product1.png' ></canvas></a></div><div class='div2'><a href='#'><p class='ptitle'>商品名称</p></a><a href='#'> <p class='pdesc'>商品简介商品简介商品简介商品简介商品简介商品简介商品简介</p></a><a href=''#'> <p class='pcount'>价格：<span>3000元</span></p></a></div></div></li>");
+            loadCanvas();
+        }
+    </script>
+</head>
+<body>
+
+<nav id="nav">
+    <ul class="navlist"><li id="n_0"><a href="index.html"><span>H</span></a></li><li id="n_1"><a href="usercenter.html"><span>x</span></a></li><li id="n_2"><a href='cart.html'><span>C</span></a></li><li id='n_3'><a href="allproduct.html"><span>D</span></a></li>
+    </ul>
+</nav>
+<section class="indexslider">
+    <img src="images/sliderbanner/2.jpg">
+</section>
+<section class="productul" id="canvas">
+    <ul>
+        <li>
+            <div class="pdiv">
+                <p class="ptag1" title="专属"></p>
+
+                <div class="div1">
+                    <a href="#">
+                        <canvas data-src="images/product/product1.png"></canvas>
+                    </a>
+                </div>
+                <div class="div2">
+                    <a href="#"><p class="ptitle">商品名称</p></a>
+                    <a href="#"><p class="pdesc">商品简介商品简介商品简介商品简介商品简介商品简介商品简介</p></a>
+                    <a href="#"><p class="pcount">价格：<span>3000元</span></p></a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="pdiv">
+                <p class="ptag2" title="推荐"></p>
+
+                <div class="div1">
+                    <a href="#">
+                        <canvas data-src="images/product/product1.png"></canvas>
+                    </a>
+                </div>
+                <div class="div2">
+                    <a href="#"><p class="ptitle">商品名称</p></a>
+                    <a href="#"><p class="pdesc">
+                        商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介</p>
+                    </a>
+                    <a href="#"><p class="pcount">价格：<span>3000元</span></p></a>
+                </div>
+            </div>
+
+        </li>
+        <li>
+            <div class="pdiv"><p class="ptag3" title="限购"></p>
+
+                <div class="div1"><a href="#">
+                    <canvas data-src="images/product/product1.png"></canvas>
+                </a></div>
+                <div class="div2"><a href="#"><p class="ptitle">商品名称</p></a><a href="#"><p class="pdesc">
+                    商品简介商品简介商品简介商品简介商品简介商品简介商品简介</p></a><a href="#"><p class="pcount">价格：<span>3000元</span></p></a>
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>
+
+
+</body>
+</html>

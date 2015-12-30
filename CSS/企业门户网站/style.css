@@ -1,0 +1,336 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body{
+    background-image: url(img/bj.gif);
+    width: 100%;
+    height: 100%;
+}
+#mainbox{
+    /*width: 960px;*/
+    /*height: 1000px;*/
+   /*border: 1px solid red;*/
+    /*margin: 0 auto;*/
+    width: 100%;
+    height: 100%;
+
+}
+.logo{
+    width: 100%;
+    height: 90px;
+    background-image: url(img/bj.gif);
+}
+.logo_img{
+    height: 90px;
+    /*border: 1px solid red;*/
+    /*width: 28%;*/
+     float: left;
+    margin-left: 8%;
+
+}
+.logo_img img{
+
+    width: 160px;
+    height: 80px;
+
+}
+.logo_img span{
+    color: #b5832c;
+    font-weight: 700;
+    display: inline-block;
+    height: 16px;
+    vertical-align: middle;
+    margin-bottom: 40px;
+
+}
+.logo_link{
+    height: 90px;
+    /*border: 1px solid red;*/
+    float: right;
+
+    margin-right: 9%
+
+}
+.logo_link span{
+    text-align: center;
+    display: block;
+    color: #b5832c;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+}
+.logo_link img{
+    display: block;
+    width: 190px;
+    height: 35px;
+}
+/*导航*/
+.menu{
+    /*border: 1px solid green;*/
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    background-image: url(img/navbj.jpg);
+
+}
+.menu ul{
+    /*border:  1px solid greenyellow;*/
+}
+.menu ul li{
+    text-align: center;
+    list-style: none;
+    display: inline-block;
+    color: #363601;
+    font-size: 18px;
+    font-weight: 600;
+    width: 8.2%;
+    /*border: 1px solid red;*/
+    height: 40px;
+    /*line-height: 40px;*/
+    overflow: hidden;
+    background: url(img/navimg.jpg) no-repeat center right;
+}
+.menu ul li:last-child{
+    background: none;
+}
+
+
+#childmenu ul{
+    /*border: 1px solid red;*/
+    width: 8.15%;
+    margin-left: 25.3%;
+    position: absolute;
+
+}
+#childmenu li{
+    font-size: 18px;
+    font-weight: 500;
+
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    line-height: 40px;
+    /*border: 1px solid red;*/
+    background-image: url(img/navbj.jpg);
+}
+
+
+
+/*banner*/
+.banner{
+    /*border: 1px solid red;*/
+    position: relative;
+    padding: 0;
+    margin: 0;
+
+
+}
+
+.banner_img{
+    /*border: 1px solid green;*/
+    width: 81%;
+    margin: 0 auto;
+    padding: 0;
+    margin-bottom: 0;
+
+}
+.banner_img img{
+
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.banner_count {
+   position: absolute;
+    bottom: 10px;
+    right: 10%;
+
+}
+.banner_count span{
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    border: 1px solid #b5832c;
+    color: #b5832c;
+}
+.banner_count span:hover{
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+/*中间部分*/
+#middlebox{
+    padding-top: 1px;
+    width: 81%;
+    margin: 0 auto;
+text-align: center;
+    /*border: 1px solid red;*/
+    height: 365px;
+    background: url(img/contentbg.png);
+}
+   /*news*/
+
+.news,.contactus{
+    display: inline-block;
+    height: 336px;
+    width: 28%;
+    border: 1px solid #d7d7d7;
+    overflow: hidden;
+}
+
+.company{
+    display: inline-block;
+    height: 336px;
+    width: 40%;
+    margin: 0 1.5%;
+    border: 1px solid #d7d7d7;
+    overflow: hidden;
+}
+
+
+
+/*news company contactus 的logo设置*/
+.news_logo{
+   background-image: url(img/news.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 55px;
+
+}
+.company_logo{
+   height: 55px;
+    width: 100%;
+}
+.company_logo img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.contactus_logo{
+    background-image: url(img/contactus.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 55px;
+}
+/*news 的图片设置*/
+.news_img{
+    width: 65%;
+    height: 35%;
+    /*border: 1px red solid;*/
+    margin: 0 auto;
+    margin-top: 15px;
+
+}
+.news_img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/*news 的内容设置*/
+.news_content{
+
+    margin-top: 15px;
+}
+.news_content ul{
+  display: inline;
+}
+.news_content ul li{
+ text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    list-style: none;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    color:#5d5a5a ;
+    border-bottom: 1px #5d5a5a  dashed;
+    position: relative;
+}
+.news_content ul li:before{
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-top: 4px solid transparent;
+    border-left: 7px solid #777777;
+    border-bottom: 4px solid transparent;
+    left: 10%;
+    top: 10px;
+
+}
+
+/*company 图片设置*/
+.company_img{
+    width: 80%;
+    height: 30%;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+.company_img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/*company 内容设置*/
+.company_content{
+   padding-top: 20px;
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    /*border: 1px solid red;*/
+    height: 120px;
+    overflow: hidden;
+
+}
+.company_content span{
+
+
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    color:#5d5a5a ;
+
+}
+/*contactus 图片设置*/
+.contactus_img{
+    width: 75%;
+    height: 20%;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+.contactus_img img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/*contactus 内容设置*/
+
+.contactus_content{
+    padding-top: 10px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    margin-left: 15%;
+    /*border: 1px solid red;*/
+    height: 175px;
+    overflow: hidden;
+
+}
+.contactus_content span{
+
+
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    color:#5d5a5a ;
+
+}

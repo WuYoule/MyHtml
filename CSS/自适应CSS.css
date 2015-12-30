@@ -1,0 +1,47 @@
+/*加载页面*/
+.circle{
+    background:url(UploadImage/loading.png) no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    animation: xuanzhuan 1.2s linear infinite;
+}
+@keyframes xuanzhuan {
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+            transform: rotate(360deg);
+    }
+}
+.circle_logo{
+    background:url(UploadImage/logo.png) no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+}
+.loadbox{
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.loading{
+    position: absolute;
+}
+.tipbox{
+    background: #fff;
+    text-align: center;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+/*公用css*/
+body{
+    background: #666;
+}

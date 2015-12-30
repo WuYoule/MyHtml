@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        .wrap{
+            width: 100%;
+            height: 2100px;
+            border: 1px solid red;
+        }
+        a{
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            display: none;
+        }
+    </style>
+    <script>
+        $(function(){
+
+            $(window).scroll(function(){
+                if ($(window).scrollTop()>100){
+                    $(".top").fadeIn(1500);
+                }
+                else
+                {
+                    $(".top").fadeOut(1500);
+                }
+            });
+
+            $('a.top').click(function () {
+                $('body,html').animate({scrollTop:0},300);
+                return false;
+            });
+
+        })
+
+    </script>
+</head>
+<body>
+<div class="wrap">
+
+</div>
+<a href="javascript:void(0)" class="top">回顶部</a>
+</body>
+</html>

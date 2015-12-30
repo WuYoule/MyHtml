@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #content{
+            height: 1000px;
+            width: 100%;
+        }
+        #mask{
+            background-color: #000000;
+            opacity: 0.75;
+            height: 1000px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1000;
+
+        }
+        #login{
+            position: fixed;
+            left: 30%;
+            top: 30%;
+            z-index: 1001;
+        }
+        .loginCon{
+
+            width: 670px;
+            height: 380px;
+            background: #fa96b5;
+        }
+        #close{
+           text-align: center;
+            vertical-align: middle;
+            line-height: 30px;
+            width: 30px;
+            height: 30px;
+            background: #2c9ef4;
+            color: white;
+            position: absolute;
+            right: 0;
+            top: -10px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+
+            document.getElementById("content").onclick=function(){
+            //获取页面的高度和宽度
+            var sHeight=document.documentElement.scrollHeight;
+            var sWeight=document.documentElement.scrollWidth;
+
+            var cWidth=document.documentElement.clientWidth;
+            var cHeight=document.documentElement.clientHeight;
+
+            alert(sHeight+' '+sWeight);
+//            alert(cHeight+' '+cWidth);
+            var oBtn=document.getElementById("btnLogin");
+            var oMask=document.createElement("div");
+            oMask.id="mask";
+            oMask.style.height=sHeight+"px";
+            oMask.style.width=sWeight+"px";
+            document.body.appendChild(oMask);
+
+
+            var oLogin=document.createElement("div");
+            oLogin.id="login";
+
+            oLogin.innerHTML="<div class='loginCon'><div id='close'>X</div></div>";
+
+            document.body.appendChild(oLogin);
+            var h=oLogin.offsetHeight;
+            var w=oLogin.offsetWidth;
+            oLogin.style.left=(cWidth-w)/2+"px";
+            oLogin.style.top=(cHeight-h)/2+"px";
+
+            oMask.onclick=document.getElementById("close").onclick=function(){
+
+                    document.body.removeChild(oMask);
+                    document.body.removeChild(oLogin)
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="content">我是内容</div>
+<!--<div id="mask"></div>-->
+<!--<div id="login">-->
+    <!--<div class="loginCon">-->
+        <!--<div id="close">X</div>-->
+    <!--</div>-->
+<!--</div>-->
+</body>
+</html>

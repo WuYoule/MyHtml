@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+
+    <style>
+        .st_container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #ead6c2;
+            background-image: url(images/mobilebg.jpg);
+            background-size: 100% auto;
+        }
+
+        .st-scroll, .st-panel {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+        }
+
+        .st-scroll {
+            left: 0;
+            top: 0;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+
+            -webkit-backface-visibility: hidden;
+
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -o-transition: all 1s ease-in-out;
+            -ms-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+
+        }
+
+        .st-panel {
+            background: #fff;
+            overflow: hidden;
+
+        }
+
+        .st-color:nth-child(2n+1) {
+            background: #fa96b5;
+            opacity: 0.3;
+        }
+        .st-color:nth-child(2n) {
+            background: #007aff;
+            opacity: 0.3;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="st_container">
+
+        <div id="canvas" class="st-scroll">
+            <section class="st-panel st-color" id="st_panel-1">
+                <div class="st-desc" data-icon="H"></div>
+                <h2>ONE</h2>
+
+                <p>
+                    在被问及“英方为何将鸣放103响礼炮”时，刘晓明表示也是第一次听说，他解释称，一般别的国家给国家元首的礼炮是21响，在英国就是两处放礼炮，一处是在绿园（GreenPark），靠近阅兵场，相当于天安门广场。将在绿园放41响礼炮，有21响是欢迎习主席（给国家元首的），再加20响表明是王室的客人.</p>
+            </section>
+            <section class="st-panel st-color" id="st_panel-2">
+                <div class="st-desc" data-icon="2"></div>
+                <h2>TWO</h2>
+
+                <p>
+                    在被问及“英方为何将鸣放103响礼炮”时，刘晓明表示也是第一次听说，他解释称，一般别的国家给国家元首的礼炮是21响，在英国就是两处放礼炮，一处是在绿园（GreenPark），靠近阅兵场，相当于天安门广场。将在绿园放41响礼炮，有21响是欢迎习主席（给国家元首的），再加20响表明是王室的客人.</p>
+            </section>
+
+            <section class="st-panel st-color" id="st_panel-3">
+                <div class="st-desc" data-icon="B"></div>
+                <h2>Three</h2>
+
+                <p>
+                    在被问及“英方为何将鸣放103响礼炮”时，刘晓明表示也是第一次听说，他解释称，一般别的国家给国家元首的礼炮是21响，在英国就是两处放礼炮，一处是在绿园（GreenPark），靠近阅兵场，相当于天安门广场。将在绿园放41响礼炮，有21响是欢迎习主席（给国家元首的），再加20响表明是王室的客人.</p>
+            </section>
+            <section class="st-panel st-color" id="st_panel-4">
+                <div class="st-desc" data-icon="x"></div>
+                <h2>FOUR</h2>
+
+                <p>
+                    在被问及“英方为何将鸣放103响礼炮”时，刘晓明表示也是第一次听说，他解释称，一般别的国家给国家元首的礼炮是21响，在英国就是两处放礼炮，一处是在绿园（GreenPark），靠近阅兵场，相当于天安门广场。将在绿园放41响礼炮，有21响是欢迎习主席（给国家元首的），再加20响表明是王室的客人.</p>
+            </section>
+
+            <section class="st-panel st-color" id="st_panel-5">
+                <div class="st-desc" data-icon="C"></div>
+                <h2>FIVE</h2>
+
+                <p>
+                    在被问及“英方为何将鸣放103响礼炮”时，刘晓明表示也是第一次听说，他解释称，一般别的国家给国家元首的礼炮是21响，在英国就是两处放礼炮，一处是在绿园（GreenPark），靠近阅兵场，相当于天安门广场。将在绿园放41响礼炮，有21响是欢迎习主席（给国家元首的），再加20响表明是王室的客人.</p>
+            </section>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var canvas = document.getElementById("canvas");
+    var TempPointY = 0;
+    var TempMoveY = 0;
+    var indexPage = 1;
+
+    canvas.addEventListener("touchstart", function (event) {
+        event.preventDefault();// 阻止浏览器默认事件，重要
+        var touch = event.targetTouches[0];
+        // 把元素放在手指所在的位置
+        TempPointY = touch.pageY;
+
+    }, false);
+
+    canvas.addEventListener("touchmove", function () {
+        event.preventDefault();// 阻止浏览器默认事件，重要
+        var touch = event.targetTouches[0];
+        // 把元素放在手指所在的位置
+        TempMoveY = touch.pageY;
+
+    }, false);
+    canvas.addEventListener("touchend", function () {
+        if (TempMoveY != 0) {
+            var distance = TempMoveY - TempPointY;
+            if (distance > 30) {
+
+//               alert('下滑');
+                indexPage++;
+
+                changepage(indexPage);
+            } else if (distance < -30) {
+                //alert("上拉")
+                indexPage--;
+                changepage(indexPage);
+            }
+
+        }
+        TempPointY = 0;
+        TempMoveY = 0;
+
+    }, false)
+    function changepage(indexpage) {
+        if (indexpage < 1) {
+            indexPage = 1;
+        }
+        else if (indexpage == 1) {
+            c1();
+        }
+        else if (indexpage == 2) {
+            c2();
+        }
+        else if (indexpage == 3) {
+            c3();
+        }
+        else if (indexpage == 4) {
+            c4();
+        }
+        else if (indexpage == 5) {
+            c5();
+        }
+        else if (indexpage >= 6) {
+            indexPage = 5;
+
+
+        }
+    }
+    function c1() {
+        $(".st-scroll").css({
+            '-webkit-transform': 'translateY(0%)',
+            '-moz-transform': 'translateY(0%)',
+            '-o-transform': 'translateY(0%)',
+            '-ms-transform': 'translateY(0%)',
+            'transform': 'translateY(0%)'
+        });
+    }
+    function c2() {
+        $(".st-scroll").css({
+            '-webkit-transform': 'translateY(-100%)',
+            '-moz-transform': 'translateY(-100%)',
+            '-o-transform': 'translateY(-100%)',
+            '-ms-transform': 'translateY(-100%)',
+            'transform': 'translateY(-100%)'
+        });
+    }
+    function c3() {
+        $(".st-scroll").css({
+            '-webkit-transform': 'translateY(-200%)',
+            '-moz-transform': 'translateY(-200%)',
+            '-o-transform': 'translateY(-200%)',
+            '-ms-transform': 'translateY(-200%)',
+            'transform': 'translateY(-200%)'
+        });
+    }
+    function c4() {
+        $(".st-scroll").css({
+            '-webkit-transform': 'translateY(-300%)',
+            '-moz-transform': 'translateY(-300%)',
+            '-o-transform': 'translateY(-300%)',
+            '-ms-transform': 'translateY(-300%)',
+            'transform': 'translateY(-300%)'
+        });
+    }
+    function c5() {
+        $(".st-scroll").css({
+            '-webkit-transform': 'translateY(-400%)',
+            '-moz-transform': 'translateY(-400%)',
+            '-o-transform': 'translateY(-400%)',
+            '-ms-transform': 'translateY(-400%)',
+            'transform': 'translateY(-400%)'
+        });
+    }
+
+
+</script>
