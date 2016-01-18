@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+        body {
+            font-family: 'Microsoft YaHei';
+
+        }
+
+        .ptag {
+
+            border: 1px solid red;
+            width: 200px;
+            text-align: justify;
+            text-align: end; /* 对于除了IE之外的浏览器用尾对齐覆盖之前的两端对齐方式 */
+
+            text-justify: distribute;
+            -moz-text-align-last: justify;
+            -ms-text-align-last: justify;/* IE 8+ 支持 */
+            text-align-last: justify;/* IE5.5+ 支持 */
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <tr>
+
+        <td>
+            遇到需要加空格的情况 要先设置字体 不同浏览器下空格解析的不一样是因为不同浏览器默认的字体不同导致的
+        </td>
+    </tr>
+    <tr>
+        <td>谷&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;歌</td>
+
+    </tr>
+    <tr>
+        <td>火狐测试</td>
+
+    </tr>
+    <tr>
+    <tr>
+        <td>这种情况下 不设置字体也可以</td>
+    </tr>
+    <td>
+        百<i style="visibility: hidden">百度百度白</i>度
+
+    </td>
+    </tr>
+
+    <tr>
+        <td>
+            搜狗拼音输入法
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            贡献一个更好记的空格形式 &emsp; 这个空格的宽度正好是1em。另外还有 &ensp; 这是0.5em的空格。
+        </td>
+    </tr>
+    <tr>
+        <td>
+            优 &ensp; &ensp; &ensp;点
+
+
+        </td>
+
+
+    </tr>
+    <tr>
+        <td>
+            优 &ensp; 缺 &ensp; 点
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p class="ptag">实现单行文字两端对齐</p>
+
+        </td>
+
+
+
+    </tr>
+    <tr>
+        <td>
+            <p class="ptag">随便啦</p>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            工程师文化
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            程<span style="margin-left: 1em"></span>序<span style="margin-left: 1em"></span> 员
+        </td>
+
+    </tr>
+</table>
+
+</body>
+</html>
