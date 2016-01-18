@@ -1,0 +1,183 @@
+body {
+    background: #3cb464;
+}
+
+.container {
+    border: 1px crimson solid;
+    position: absolute;
+    width: 800px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.container div, .container span {
+    position: absolute;
+}
+
+.item#orange {
+
+    top: 10%;
+    left: 10%;
+    width: 110px;
+    height: 110px;
+    background: #f0a524;
+    border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
+    animation: bounce 0.7s ease-in-out infinite;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.3s;
+}
+
+.item .chewing .eye.left{
+    top: 30px;
+    left: 20px;
+    border-radius: 50%;
+    border-top: 2px solid #111;
+    background: #fff;
+    width: 30px;
+    height: 29px;
+}
+.item .chewing .eye.right{
+    top: 30px;
+    left: 60px;
+    border-radius: 50%;
+    border-top: 2px solid #111;
+    background: #fff;
+    width: 25px;
+    height: 24px;
+}
+.item .chewing .eye.left span{
+    width: 4px;
+    height: 4px;
+    background: #232323;
+    border-radius: 2px;
+    top: 14px;
+    left: 15px;
+
+}
+
+.item .chewing .eye.right span{
+    width: 4px;
+    height: 4px;
+    background: #232323;
+    border-radius: 2px;
+    top: 10px;
+    left: 13px;
+}
+
+
+.item .chewing .zuiba {
+    width: 16px;
+    height: 4px;
+    top: 80px;
+    left: 43px;
+    background: #fff;
+    border-radius: 50% 50% 100% 100%;
+    animation: mounth 0.7s ease-in-out infinite;
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.3s;
+}
+
+
+.item .chewing .arm.left {
+    width: 15px;
+    height: 16px;
+    top: 70px;
+   left: -14px;
+    border-radius: 7px;
+    z-index: -1;
+    background: #f0a524;
+    -webkit-animation: arm-bounce 0.7s ease-in infinite;
+    animation: arm-bounce 0.7s ease-in infinite;
+
+}
+.item .chewing .arm.right {
+    width: 15px;
+    height: 16px;
+    top: 70px;
+    left: 109px;
+    border-radius: 7px;
+    z-index: -1;
+    background: #f0a524;
+
+
+}
+.item .chewing .arm{
+    -webkit-animation: arm-bounce 0.7s ease-in infinite;
+    animation: arm-bounce 0.7s ease-in infinite;
+
+}
+
+
+.item .shadow {
+    /*border: 1px solid red;*/
+    width: 70px;
+    height: 10px;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 50%;
+    background: #37a45b;
+    box-shadow: 0 0 5px #37a45b;
+    animation: shadow 0.7s ease-in-out infinite;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+
+}
+
+
+@keyframes shadow {
+    0%, 100% {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+    50% {
+        -webkit-transform: scaleX(0.9);
+        transform: scaleX(0.9);
+    }
+}
+
+
+@keyframes bounce {
+    0% {
+        top: 10%;
+    }
+    65% {
+        top: 7%;
+    }
+    100% {
+        top:10%;
+        border-radius: 49% 47% 42% 40%/60% 60% 40% 40%;
+    }
+}
+
+
+@keyframes mounth {
+    0%, 100% {
+        height: 4px;
+        border-radius: 50% 50% 100% 100%;
+    }
+    50% {
+        height: 8px;
+        /*bottom: 17px;*/
+        border-radius: 30% 30% 100% 100%;
+    }
+}
+
+@keyframes arm-bounce {
+    0%, 100% {
+        top: 70px;
+    }
+    33% {
+        top: 75px;
+    }
+    40% {
+        -webkit-transform: scale(0.8);
+        transform: scale(0.8);
+    }
+    66% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
