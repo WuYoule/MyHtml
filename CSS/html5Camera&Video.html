@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<video id="video" width="640" height="480" style="border: 1px solid red" autoplay></video>
+<button id="snap">Snap Photo
+</button>
+<canvas id="canvas" width="640" height="480"></canvas>
+</body>
+
+
+</html>
+<script>
+    window.addEventListener("DOMContentLoaded", function () {
+        var canvas = document.getElementById("canvas"),
+                context = canvas.getContext("2d"),
+                video = document.getElementById("video"),
+                videoObj = {"video": true},
+                errBack = function (error) {
+                    console.log("ERROR!", error.code);
+
+                };
+        if (navigator.getUserMedia) {//标准
+            navigator.getUserMedia(videoObj, function (stream) {
+                video.src = stream;
+                video.play();
+            }, errBack);
+
+        }
+        else if(navigator.webkitGetUserMedia){
+            navigator.webkitGetUserMedia(videoObj,function(stream){
+                video.src=window.webkitURL.createObjectURL(stream);
+                video.play();
+            },errBack);
+
+        }
+        else if(navigator.mozGetUserMedia) { // Firefox-prefixed
+            navigator.mozGetUserMedia(videoObj, function(stream){
+                video.src = window.URL.createObjectURL(stream);
+                video.play();
+            }, errBack);
+        }
+        else if(navigator.msGetUserMedia) { // Firefox-prefixed
+            navigator.msGetUserMedia(videoObj, function(stream){
+                video.src = window.URL.createObjectURL(stream);
+                video.play();
+            }, errBack);
+        }
+        document.getElementById("snap").addEventListener("click", function() {
+            context.drawImage(video, 0, 0, 640, 480);
+        });
+
+    },false);
+
+
+
+</script>
